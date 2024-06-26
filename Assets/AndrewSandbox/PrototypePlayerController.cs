@@ -7,7 +7,7 @@ public class PrototypePlayerController : MonoBehaviour
     private bool isDead = false;
 
     [SerializeField]
-    protected float playerSpeed = 2.25f;
+    protected float playerSpeed = 3f;
     [SerializeField]
     protected float cameraSpeedX = 2f;
     [SerializeField]
@@ -15,6 +15,9 @@ public class PrototypePlayerController : MonoBehaviour
 
     [SerializeField]
     protected float interactionRange = 5;
+
+    [SerializeField]
+    private GameObject currentLookingObject;
 
     protected float cameraY;
     protected float cameraX;
@@ -68,6 +71,8 @@ public class PrototypePlayerController : MonoBehaviour
         }
 
         moveDirection = moveDirection.normalized;
+
+        transform.position += moveDirection * playerSpeed * Time.deltaTime;
     }
 
     protected virtual void Rotation()

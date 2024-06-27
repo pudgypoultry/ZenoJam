@@ -19,6 +19,13 @@ public class AndrewPlayerMovement : MonoBehaviour
     bool moving = false;
     int frame;
 
+    private Recorder recorder;
+
+    private void Awake()
+    {
+        recorder = GetComponent<Recorder>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +42,12 @@ public class AndrewPlayerMovement : MonoBehaviour
         {
             // Animate();
         }
+    }
+
+    private void LateUpdate()
+    {
+        ReplayData data = new ReplayData(this.transform.position, this.transform.eulerAngles);
+        recorder.RecordReplayFrame(data);
     }
 
     void CheckInput()

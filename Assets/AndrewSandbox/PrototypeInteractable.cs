@@ -26,26 +26,22 @@ public class PrototypeInteractable : MonoBehaviour
         Debug.Log("Interact function not implemented for this object: " + this.name);
     }
 
-    public virtual void InteractToggle()
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("InteractToggle function not implemented for this object: " + this.name);
+        if (!hoveringOver)
+        {
+            hoveringOver = true;
+            Debug.Log("Now hovering over: " + this.name);
+        }
     }
 
-    public virtual void InteractHold()
+    private void OnTriggerExit(Collider other)
     {
-        Debug.Log("InteractHold function not implemented for this object: " + this.name);
-    }
+        if (hoveringOver)
+        {
+            hoveringOver = false;
+            Debug.Log("Done hovering over: " + this.name);
+        }
 
-    public virtual void OnHover()
-    {
-        hoveringOver = true;
-        gameObject.GetComponent<Renderer>().material = glowingMaterial;
     }
-
-    public virtual void OffHover()
-    {
-        hoveringOver = false;
-        gameObject.GetComponent<Renderer>().material = currentMaterial;
-    }
-
 }

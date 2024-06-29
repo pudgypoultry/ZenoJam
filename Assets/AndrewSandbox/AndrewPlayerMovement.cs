@@ -46,7 +46,8 @@ public class AndrewPlayerMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        ReplayData data = new ReplayData(this.transform.position, this.transform.eulerAngles);
+        ReplayData data = new ReplayData(this.transform.position, this.transform.eulerAngles, Input.GetKeyDown(interact_input));
+        // Debug.Log(data);
         recorder.RecordReplayFrame(data);
     }
 
@@ -141,8 +142,6 @@ public class AndrewPlayerMovement : MonoBehaviour
         {
             interactionCollider.interactHeld = false;
         }
-
-
     }
 
 

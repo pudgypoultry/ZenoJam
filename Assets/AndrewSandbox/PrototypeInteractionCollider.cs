@@ -9,14 +9,15 @@ public class PrototypeInteractionCollider : MonoBehaviour
     public bool interactHeld = false;
     public bool interactionAvailable = false;
     public bool currentlyInteracting = false;
-    public GameObject interactionCandidate;
+    public GameObject interactionCandidate = null;
 
     private void Update()
     {
         if (interactJustPressed && interactionCandidate != null)
         {
             interactionCandidate.GetComponent<PrototypeInteractable>().Interact();
-            Debug.Log(transform.parent.name + " is trying to interact!");
+
+            // Debug.Log(transform.parent.name + " is trying to interact with " + interactionCandidate.name + "!");
         }
     }
 
@@ -28,6 +29,7 @@ public class PrototypeInteractionCollider : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        interactJustPressed = false;
         interactionCandidate = null;
     }
 

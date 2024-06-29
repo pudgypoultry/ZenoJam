@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4583449783710059294}
   - component: {fileID: 3441074661812528548}
   - component: {fileID: 4390438741028089277}
-  - component: {fileID: 6433688061554655356}
   - component: {fileID: 2547899935209283310}
+  - component: {fileID: 3780120438201567462}
   m_Layer: 0
   m_Name: PlayerEcho
   m_TagString: Untagged
@@ -87,27 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6433688061554655356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2885006014813684089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729a1781a1b708c478f0eb540ba7e51b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  up_input: 0
-  down_input: 0
-  left_input: 0
-  right_input: 0
-  interact_input: 0
-  speed: 5
-  animation_wait: 1
-  interactionCollider: {fileID: 7085118520929842910}
-  isEcho: 1
 --- !u!114 &2547899935209283310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +99,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1140f5deec258154394b6fabcaa2ea80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactTrigger: {fileID: 7085118520929842910}
+--- !u!136 &3780120438201567462
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2885006014813684089}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6182158600978552053
 GameObject:
   m_ObjectHideFlags: 0

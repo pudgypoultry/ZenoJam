@@ -31,7 +31,7 @@ public class PrototypeInteractable : MonoBehaviour
         if (!hoveringOver)
         {
             hoveringOver = true;
-            Debug.Log("Now hovering over: " + this.name);
+            // Debug.Log("Now hovering over: " + this.name);
         }
     }
 
@@ -40,7 +40,7 @@ public class PrototypeInteractable : MonoBehaviour
         if (hoveringOver)
         {
             hoveringOver = false;
-            Debug.Log("Done hovering over: " + this.name);
+            // Debug.Log("Done hovering over: " + this.name);
         }
 
     }

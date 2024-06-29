@@ -28,6 +28,7 @@ public class Recording
 
 
         bool hasMoreFrames = false;
+
         if (replayQueue.Count != 0)
         {
             ReplayData data = replayQueue.Dequeue();
